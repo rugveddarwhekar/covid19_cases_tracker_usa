@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="State"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <org.angmarch.views.NiceSpinner
+        android:id="@+id/nice_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:ellipsize="end"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewState"
+        app:layout_constraintTop_toTopOf="@id/textViewState"
+        app:layout_constraintBottom_toBottomOf="@id/textViewState"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupMetricSelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nice_spinner">
+
+        <RadioButton
+            android:id="@+id/radioButtonNegative"
+            style="@style/CustomRadioButton"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Negative" />
+
+        <RadioButton
+            android:id="@+id/radioButtonPositive"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            style="@style/CustomRadioButton"
+            android:layout_height="wrap_content"
+            android:text="Positive" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDeath"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            style="@style/CustomRadioButton"
+            android:layout_height="wrap_content"
+            android:text="Death" />
+    </RadioGroup>
+
+    <com.robinhood.spark.SparkView
+        android:paddingTop="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="8dp"
+        android:id="@+id/sparkView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:background="@color/colorBackgroundShade"
+        app:layout_constraintBottom_toTopOf="@+id/radioTimeScaleSelection"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupMetricSelection" />
+
+    <RadioGroup
+        android:layout_marginTop="16dp"
+        android:paddingBottom="8dp"
+        android:id="@+id/radioTimeScaleSelection"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:background="@color/colorBackgroundShade"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textViewMetricLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButtonWeek"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            style="@style/CustomRadioButton"
+            android:layout_height="wrap_content"
+            android:text="Week" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMonth"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            style="@style/CustomRadioButton"
+            android:layout_height="wrap_content"
+            android:text="Month" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMax"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            style="@style/CustomRadioButton"
+            android:layout_height="wrap_content"
+            android:text="Max" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.robinhood.ticker.TickerView
+        android:id="@+id/textViewMetricLabel"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewDate" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@ An open-source Android COVID-19 tracking app built using core UI components from
 
 <img src='https://media3.giphy.com/media/THm1ofDwDPganCYyIx/giphy.gif' title='walk through' />
 
-Tutorial Follow along by: [Rahul Pandey](https://github.com/rpandey1234/)
+Followed tutorial by: [Rahul Pandey](https://github.com/rpandey1234/)
 
 Libraries used:
 - Retrofit: https://github.com/square/retrofit
